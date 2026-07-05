@@ -10,18 +10,48 @@
 // multiply by 2
 // multiply by 2
 // add 1
-
-let prom = new Promise((resolve, reject) => {
+let promise = new Promise((resolve, reject)=>{
     resolve(5);
-}).then((num) => {
-    console.log(num);
-    return num * 2;
-}).then((num) => {
-    console.log(num);
-    return num * 2;
-}).then((num) => {
-    console.log(num);
-    return num + 1;
-}).then((num) => {
-    console.log(num);
+});
+
+promise.then((msg)=>{
+    console.log(msg);
+    return msg;
+}).then((msg)=>{
+    msg *= 2;
+    console.log(msg);
+    return msg;
+}).then((msg)=>{
+    msg *= 2;
+    console.log(msg);
+    return msg;
+}).then((msg)=>{
+    msg += 1;
+    console.log(msg);
+    return msg;
 })
+
+
+
+
+
+
+
+
+
+
+
+// let prom = new Promise((resolve, reject) => {
+//     resolve(5);
+// }).then((num) => {
+//     console.log(num);
+//     return num * 2;
+// }).then((num) => {
+//     console.log(num);
+//     return num * 2;
+// }).then((num) => {
+//     console.log(num);
+//     return num + 1;
+// }).then((num) => {
+//     console.log(num);
+// })

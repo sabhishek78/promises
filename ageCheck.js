@@ -6,21 +6,52 @@
 // Otherwise
 // Access Denied
 // Use both .then() and .catch().
-const age = 20;
+let age = 2;
 
-let execF = (resolve, reject) => {
-    if (age >= 18) {
+let promise = new Promise((resolve, reject)=>{
+    if(age >= 18){
         resolve("Access Granted");
     }
-    else {
+    else{
         reject("Access Denied");
     }
-};
+});
 
-let prom1 = new Promise(execF);
-
-prom1.then((message) => {
-    console.log(message);
-}).catch((message) => {
-    console.log(message);
+promise.then((msg)=>{
+    console.log(msg);
+}).catch((err)=>{
+    console.log(err);
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const age = 20;
+
+// let execF = (resolve, reject) => {
+//     if (age >= 18) {
+//         resolve("Access Granted");
+//     }
+//     else {
+//         reject("Access Denied");
+//     }
+// };
+
+// let prom1 = new Promise(execF);
+
+// prom1.then((message) => {
+//     console.log(message);
+// }).catch((message) => {
+//     console.log(message);
+// })
