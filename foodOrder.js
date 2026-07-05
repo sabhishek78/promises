@@ -8,7 +8,14 @@
 // ↓
 // Deliver Food
 // Each step should take 1 second.
+// Modify the program so that:
 
+// ❌ If food preparation fails, print:
+
+// Preparing food...
+// Food preparation failed!
+// The remaining steps (Pack and Deliver) should not execute.
+// Use .catch() to handle the error.
 function chooseFood() {
     return new Promise((resolve) => {
         setTimeout(() => {
@@ -19,10 +26,10 @@ function chooseFood() {
 }
 
 function prepareFood() {
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
         setTimeout(() => {
             console.log('Preparing food...');
-            resolve();
+            reject('Food preparation failed!');
         }, 1000);
     })
 }
@@ -45,4 +52,4 @@ function deliverFood() {
     })
 }
 
-chooseFood().then(() => prepareFood()).then(() => packFood()).then(() => deliverFood());
+chooseFood().then(() => prepareFood()).then(() => packFood()).then(() => deliverFood()).catch((err)=>console.log(err));
